@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGoat.NET", "WebGoat\WebGoat.NET.csproj", "{83B04441-0F79-4424-AAD0-46E0C3CDDAA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeCredentials", "FakeCredentials\FakeCredentials.csproj", "{042DE5E2-4153-47E2-B0F4-312166594CFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{83B04441-0F79-4424-AAD0-46E0C3CDDAA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83B04441-0F79-4424-AAD0-46E0C3CDDAA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83B04441-0F79-4424-AAD0-46E0C3CDDAA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{042DE5E2-4153-47E2-B0F4-312166594CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{042DE5E2-4153-47E2-B0F4-312166594CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{042DE5E2-4153-47E2-B0F4-312166594CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{042DE5E2-4153-47E2-B0F4-312166594CFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = WebGoat\WebGoat.NET.csproj

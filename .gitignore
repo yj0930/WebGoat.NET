@@ -8,6 +8,8 @@ obj
 WebGoat/App_Data/*.txt
 *.sqlite*
 WebGoat/Configuration/*.config
+packages
+!FakeCredentials/webgoat_coins.sqlite
 
 # Trash Files #
 ###############
