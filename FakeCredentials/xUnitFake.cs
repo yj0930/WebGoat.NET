@@ -9,22 +9,30 @@ namespace FakeCredentials
     public class xUnitFake
     {
         [Fact]
+        public void FakeTest1()
+        {
+            // Arrange
+            ConfigFile configFile = new ConfigFile(null);
+
+            // Act
+            configFile.Set("key1", "value1");
+            string value1 = configFile.Get("key1");
+
+            // Assert
+            Assert.Equal(value1, "value1");
+        }
+
+        [Fact]
         public void FakeTest2()
         {
             // Arrange
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string configName = Settings.DefaultConfigName;
             configName = Path.Combine(baseDirectory, configName);
-            string sqliteFile = "webgoat_coins.sqlite";
-            sqliteFile = Path.Combine(baseDirectory, sqliteFile);
-            string[] lines =
-            {
-                "dbtype=Sqlite",
-                "filename=" + sqliteFile
-            };
-            File.WriteAllLines(configName, lines);
             ConfigFile configFile = new ConfigFile(configName);
-            configFile.Load();
+            configFile.Set("dbtype", "Sqlite");
+            configFile.Set("filename", "webgoat_coins.sqlite");
+            configFile.Save();
             IDbProvider dbProvider = DbProviderFactory.Create(configFile);
             string fakeEmail = "someone@somewhere";
             string fakePassword = DateTime.Now.ToString();
