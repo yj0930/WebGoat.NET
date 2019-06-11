@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.IO.Compression;
+using System.Net;
 using OWASP.WebGoat.NET.App_Code;
 using OWASP.WebGoat.NET.App_Code.DB;
 using Xunit;
@@ -26,6 +28,14 @@ namespace FakeCredentials
         public void FakeTest2()
         {
             // Arrange
+            if (!File.Exists("sqlite3.dll"))
+            {
+                WebClient webClient = new WebClient();
+                string zipName = "sqlite-dll-win32-x86-3280000.zip";
+                webClient.DownloadFile("https://www.sqlite.org/2019/" + zipName, zipName);
+                File.Delete("sqlite3.def");
+                ZipFile.ExtractToDirectory(zipName, ".");
+            }
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string configName = Settings.DefaultConfigName;
             configName = Path.Combine(baseDirectory, configName);
